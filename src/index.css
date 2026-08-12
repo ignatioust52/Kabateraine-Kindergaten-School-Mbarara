@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-purple-deep: #3d2059;
+  --color-purple-mid: #6a527d;
+  --color-yellow-sun: #e9dc20;
+  --color-yellow-muted: #dbd04c;
+  --color-yellow-pale: #f1e7a2;
+  --color-cream: #f9efed;
+  --color-cream-dark: #f0e0dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9efed;
+  font-family: 'Poppins', sans-serif;
+  color: #3d2059;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f9efed;
+}
+::-webkit-scrollbar-thumb {
+  background: #6a527d;
+  border-radius: 3px;
+}
+
+.font-display {
+  font-family: 'Fredoka One', cursive;
+}
+
+.font-heading {
+  font-family: 'Nunito', sans-serif;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
+}
