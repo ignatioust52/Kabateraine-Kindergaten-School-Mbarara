@@ -1,0 +1,10 @@
+{
+  "description": "Designed for parents, this responsive kindergarten website showcases Kabateraine Kindergarten's programs, enrollment details, and vibrant learning environment.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
