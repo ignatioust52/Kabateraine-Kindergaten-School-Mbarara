@@ -1,7 +1,11 @@
 {
-  "description": "Designed for parents, this responsive kindergarten website showcases Kabateraine Kindergarten's programs, enrollment details, and vibrant learning environment.",
+  "title": "Kabateraine Kindergarten School",
+  "description": "Nurturing curious minds and confident hearts in Mbarara City, Uganda.",
   "robots": {
-    "index": false
+    "index": true
+  },
+  "icons": {
+    "icon": "/assets/KABATERAINE KINDERGATEN LOGO.png"
   },
   "accessibility": {
     "addBypassLinks": false,
