@@ -62,7 +62,46 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         style={{ backgroundColor: '#fff9f8', borderColor: '#f0e0dc' }}
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
+          <div className="flex items-center">
+            <nav className="hidden lg:flex items-center gap-5">
+              {NAV_LINKS.map((link) => {
+                const active = location.pathname === link.path
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="font-heading font-semibold text-sm transition-all relative py-1"
+                    style={{ color: active ? '#3d2059' : '#6a527d' }}
+                  >
+                    {link.label}
+                    {active && (
+                      <span
+                        className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
+                        style={{ backgroundColor: '#e9dc20' }}
+                      />
+                    )}
+                  </Link>
+                )
+              })}
+              <Link
+                to="/admissions"
+                className="font-heading font-bold text-sm px-5 py-2 rounded-full transition-all hover:scale-105 shadow-md"
+                style={{ backgroundColor: '#3d2059', color: '#e9dc20' }}
+              >
+                Enroll Now →
+              </Link>
+            </nav>
+            <button
+              className="lg:hidden p-2 rounded-lg"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              <div className="w-5 h-0.5 mb-1" style={{ backgroundColor: '#3d2059' }} />
+              <div className="w-5 h-0.5 mb-1" style={{ backgroundColor: '#3d2059' }} />
+              <div className="w-5 h-0.5" style={{ backgroundColor: '#3d2059' }} />
+            </button>
+          </div>
+
+          <Link to="/" className="flex items-center gap-3 flex-row-reverse text-right">
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center shadow-md flex-shrink-0 overflow-hidden border-2 bg-white"
               style={{ borderColor: '#3d2059' }}
@@ -74,44 +113,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="font-heading text-xs font-semibold" style={{ color: '#6a527d' }}>Kindergarten School</div>
             </div>
           </Link>
-
-          <nav className="hidden lg:flex items-center gap-5">
-            {NAV_LINKS.map((link) => {
-              const active = location.pathname === link.path
-              return (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="font-heading font-semibold text-sm transition-all relative py-1"
-                  style={{ color: active ? '#3d2059' : '#6a527d' }}
-                >
-                  {link.label}
-                  {active && (
-                    <span
-                      className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
-                      style={{ backgroundColor: '#e9dc20' }}
-                    />
-                  )}
-                </Link>
-              )
-            })}
-            <Link
-              to="/admissions"
-              className="font-heading font-bold text-sm px-5 py-2 rounded-full transition-all hover:scale-105 shadow-md"
-              style={{ backgroundColor: '#3d2059', color: '#e9dc20' }}
-            >
-              Enroll Now →
-            </Link>
-          </nav>
-
-          <button
-            className="lg:hidden p-2 rounded-lg"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            <div className="w-5 h-0.5 mb-1" style={{ backgroundColor: '#3d2059' }} />
-            <div className="w-5 h-0.5 mb-1" style={{ backgroundColor: '#3d2059' }} />
-            <div className="w-5 h-0.5" style={{ backgroundColor: '#3d2059' }} />
-          </button>
         </div>
 
         {mobileOpen && (
